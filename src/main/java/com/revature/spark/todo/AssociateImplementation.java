@@ -10,7 +10,7 @@ import com.revature.spark.beans.User;
  * Within this class, you will implement the logic to calculate data for various
  * reports.
  * 
- * @author Your Name Here
+ * @author Aaron Chumchal
  * 
  */
 public class AssociateImplementation {
@@ -22,7 +22,13 @@ public class AssociateImplementation {
 	 * @return
 	 */
 	public Double sum(List<Expense> expenses) {
-		return null;
+		double sum=0;
+		for(int i=0;i<expenses.size();i++) {
+			sum+=expenses.get(i).getCost();
+		}
+		
+		
+		return sum;
 	}
 
 	/**
@@ -32,7 +38,13 @@ public class AssociateImplementation {
 	 * @return
 	 */
 	public Double min(List<Expense> expenses) {
-		return null;
+		double LowestVal=100000;
+		for(int i=0;i<expenses.size();i++) {
+			
+			LowestVal=Math.min(LowestVal, expenses.get(i).getCost() );
+			}
+		
+		return LowestVal;
 	}
 
 	/**
@@ -42,7 +54,14 @@ public class AssociateImplementation {
 	 * @return
 	 */
 	public Double max(List<Expense> expenses) {
-		return null;
+		double HighestVal=0;
+		for(int i=0;i<expenses.size();i++) {
+			
+			HighestVal=Math.max(HighestVal, expenses.get(i).getCost() );
+			}
+		
+		
+		return HighestVal;
 	}
 
 	/**
@@ -52,7 +71,15 @@ public class AssociateImplementation {
 	 * @return
 	 */
 	public Double avg(List<Expense> expenses) {
-		return null;
+		
+			double average;
+			double total=0;
+			for(int i=0;i<expenses.size();i++) {
+				total+=expenses.get(i).getCost();
+			}
+			average=total/expenses.size();
+			
+		return average;
 	}
 
 	/**
@@ -62,8 +89,46 @@ public class AssociateImplementation {
 	 * @return
 	 */
 	public Double median(List<Expense> expenses) {
-		return null;
+		Double med=0.0;
+		int x=expenses.size();
+		Double ExpArray[]=new Double[x];
+		for(int i=0;i<expenses.size();i++) {
+			ExpArray[i]=expenses.get(i).getCost();
+		}
+		order(ExpArray);
+		
+		if (x%2==0) {
+			med=(ExpArray[(x/2)]+ExpArray[(x/2)-1])/2;
+		}else {
+			med=ExpArray[(x/2)];
+		}
+		
+		
+		
+		return med;
 	}
+	
+	public Double[] order(Double[] numArray){
+		   boolean change;
+		   int size=numArray.length-1;
+		  Double[] x=numArray;
+		  do {
+		      change=false;
+		   for(int i=0;i<size;i++){
+		if (x[i]>x[i+1])
+		{
+		    double temp=x[i];
+		    x[i]=x[i+1];
+		    x[i+1]=temp;
+		    change=true;
+		}
+
+		   }
+		   size--;
+		  }while (change);
+		 return x;
+		 }
+	
 
 	/**
 	 * !! BONUS CHALLENGE REQUIREMENT !!

@@ -1,0 +1,73 @@
+
+body {
+    height: 100%;
+    background-color: rgb(149, 231, 149);
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-color: green;
+
+  /* Set a specific height */
+  height: 10%;
+width:100%;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+/* #Expenses{
+  text-align: center;
+} */
+table{
+  text-align: center;
+  position: absolute;
+}
+ input{
+  position: absolute;
+  Left:140px;
+}
+label{
+  position: relative;
+  color: Black; 
+} 
+a{
+  text-align:center;
+}
+button{
+  text-align:center;
+  position: absolute;
+  Left: 30px;
+  width: 250px;
+
+}
+#stats, {
+  width: 100px;
+  
+}
+table, th, td {
+  border: 3px solid green;
+  background-color:rgba(207, 224, 195, 0.966);
+  left: 10px;
+}
+#GetTable{
+	width: 100px;
+	position: absolute;
+	left: 750px;
+}
+#money{
+	width: 300px;
+		
+}
